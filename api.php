@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("192.168.5.5", "root","","parking");
+$con = mysqli_connect("192.168.5.64", "root","","parking");
 $response=array();
 if($con){   
     $sql = "select * from plaque_allow";
