@@ -58,4 +58,6 @@ updatePlaque(Test);*/
  echo json_encode($response, JSON_PRETTY_PRINT);
  }
 
+ getPlaque();
+
     ?>
