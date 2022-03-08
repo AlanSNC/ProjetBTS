@@ -20,7 +20,7 @@ if($con){
 else{
     echo "DataBase connection failed";}
     
-    function updatePlaque($Nom)
+   /* function updatePlaque($Nom)
  {
  global $conn;
  $data = json_decode(file_get_contents("php://input"),true);
@@ -42,6 +42,20 @@ mysqli_error($conn)
 );}
  }
 
-updatePlaque(Test);
+updatePlaque(Test);*/
+
+    function getPlaque()
+ {
+ global $conn;
+ $query = "SELECT * FROM plaque_allow";
+ $response = array();
+ $result = mysqli_query($conn, $query);
+ while($row = mysqli_fetch_array($result))
+ {
+ $response[] = $row;
+ }
+ header('Content-Type: application/json');
+ echo json_encode($response, JSON_PRETTY_PRINT);
+ }
 
     ?>
