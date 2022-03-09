@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("192.168.5.64", "root","","parking");
+$con = mysqli_connect("localhost", "root","","parking");
 $response=array();
 if($con){   
     $sql = "select * from plaque_allow";
@@ -20,24 +20,5 @@ if($con){
 else{
     echo "DataBase connection failed";}
     
-
-
-    function getPlaqueByName($Nom=0)
-{
-global $conn;
-$query = "SELECT * FROM Plaque_allow";
-if($ID != 0){
-    $query .= " WHERE Nom=".$Nom." LIMIT 1";
-}
-$response = array();
-$result = mysqli_query($conn, $query);
-while($row = mysqli_fetch_array($result)){
-    $response[] = $row;
-}
-header('Content-Type: application/json');
- }
-
- getPlaque();
- getPlaqueByName(Test);
 
     ?>
