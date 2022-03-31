@@ -11,10 +11,7 @@
 
 // Connexion a la BDD
 include("db_connect.php");
-include("fonctionsApi.php");
-include("api.php");
 
-$NomSup = $_POST['NomSup'];
 
 
 // Connexion à la base de données 
@@ -26,17 +23,15 @@ if ($conn->connect_error) {
 }
     else{
 
-       
-//Insérer des enregistrements dans une table (exemples d’un formulaire de contact) 
-        AddPlaqueFromForm();
 
+       
 
 
     }
 
-//test si l’enregistrement est réussi 
+//test si l'user est autorisé
     if ($conn->query($sql) === TRUE) { 
-        echo "Nouvel enregistrement réussi "; }
+        echo "Connexion "; }
         else { 
         echo "Erreur: " . $sql . "<br>" . $conn->error; 
     }

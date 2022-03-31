@@ -1,7 +1,8 @@
 <?php
-	$server = "localhost";
+	global $conn;
+	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$db = "stock";
-	$conn = mysqli_connect($server, $username, $password, $db);
+	$dbname = "parking";
+	$conn = mysqli_connect($servername, $username, $password, $dbname);
 ?>
